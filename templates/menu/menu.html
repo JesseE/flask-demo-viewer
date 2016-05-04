@@ -1,0 +1,10 @@
+{% macro demoMenu() %}
+<nav>
+    <ul>
+        <li>Menu</li>
+        {% for item in demo %}
+            <a href="demo/{{item}}"><li>{{item}}</li></a>
+        {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}

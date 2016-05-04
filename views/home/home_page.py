@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template
 
-home_page = Blueprint('home_page', __name__, template_folder='templates')
+mypath = 'templates'
+home_page = Blueprint('home_page', __name__, template_folder=mypath)
 
 @home_page.route('/')
-def show():
+def home():
     user = 'Admin'
-    return render_template('home/home.html', user=user)
+    return render_template(mypath + '/home/home.html', user=user)
