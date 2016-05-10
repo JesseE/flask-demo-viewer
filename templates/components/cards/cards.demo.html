@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "components/menu/menu.html" as demoListing %}
+{% block content %}
+{{demoListing(demoList)}}
+<nav>
+    <ul>
+        <li>Cards</li>
+    </ul>
+</nav>
+{% endblock %}

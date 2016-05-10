@@ -1,13 +1,12 @@
 from flask import Flask
-from views.home.home_page import home_page
-from views.demo.demo_viewer import demo_viewer
-
-mypath = 'templates'
+from views.home.views import home_page
+from views.demo.views import demo_viewer
 
 app = Flask(__name__)
 
-app.register_blueprint(home_page, url_prefix='/')
+app.register_blueprint(home_page)
 app.register_blueprint(demo_viewer)
 
+# create a config that changes between dev and prod 
 if __name__ == '__main__':
     app.run(debug=True)

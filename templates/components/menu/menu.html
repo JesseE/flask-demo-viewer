@@ -1,0 +1,19 @@
+{% macro demoListing(demoList) %}
+<ul>
+    {% for link in demoList %}
+    <a href="demo/{{link}}">
+        <li>{{link}}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro mainMenu(pageList) %}
+<ul>
+    {% for link in pageList %}
+    <a href="{{link}}">
+        <li>{{link}}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endmacro %}
