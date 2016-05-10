@@ -1,6 +1,6 @@
-{% macro demoListing(demoList) %}
+{% macro demoListing(moduleList) %}
 <ul>
-    {% for link in demoList %}
+    {% for link in moduleList %}
     <a href="demo/{{link}}">
         <li>{{link}}</li>
     </a>

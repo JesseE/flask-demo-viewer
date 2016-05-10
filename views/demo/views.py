@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template
 from functools import wraps
 from os import listdir 
-from fnmatch import fnmatch
 
 mypath = 'templates/components/'
+
 demo_viewer = Blueprint('demo_viewer', __name__, template_folder=mypath)
+
 exceptions = 'base.html'
 demoHtml = '.demo'
 demoList = []
@@ -22,17 +23,20 @@ def get_demo_component():
             directory = directory.replace('.html', '')
             if directory.endswith(demoHtml) and directory not in demoList:
                 demoList.append(directory)
-            if directory not in moduleList:
+            elif directory not in moduleList and not directory.endswith(demoHtml):
                 moduleList.append(directory)
-                
     
 @demo_viewer.route('/demo')
 def demo_overview_page():
     get_demo_component()
     page = 'demo'    
-    return render_template('components' + '/{0}/{0}.{0}.html'.format(page), moduleList=moduleList)
+    return render_template('demoviewer' + '/{0}/{0}.{0}.html'.format(page), moduleList=moduleList)
 
 @demo_viewer.route('/demo/<page>')
 def demo_component_page(page):
     get_demo_component()
     return render_template('components' + '/{0}/{0}.demo.html'.format(page), demoList=demoList)
+
+@demo_viewer.route('/demo/viewer')
+def demo_viewer_page():
+    return render_template('demoviewer/viewer/viewer.html')
