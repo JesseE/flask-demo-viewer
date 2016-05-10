@@ -30,13 +30,9 @@ def get_demo_component():
 def demo_overview_page():
     get_demo_component()
     page = 'demo'    
-    return render_template('demoviewer' + '/{0}/{0}.{0}.html'.format(page), moduleList=moduleList)
+    return render_template('viewer' + '/{0}/{0}.{0}.html'.format(page), moduleList=moduleList)
 
 @demo_viewer.route('/demo/<page>')
 def demo_component_page(page):
     get_demo_component()
     return render_template('components' + '/{0}/{0}.demo.html'.format(page), demoList=demoList)
-
-@demo_viewer.route('/demo/viewer')
-def demo_viewer_page():
-    return render_template('demoviewer/viewer/viewer.html')
