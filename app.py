@@ -1,6 +1,6 @@
 from flask import Flask
 from views.home.views import home_page
-from views.demo.views import demo_viewer
+from templates.demo.views import demo_viewer
 from cache import cache
 from configmodule import *
 

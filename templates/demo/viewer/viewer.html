@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8" data-ng-app="app"> <![endif]-->
+<!--[if gt IE 8]><!--><html data-ng-app="app"><!--<![endif]-->
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>DMC viewer</title>
+
+	<!--[if lt IE 9]>
+	<script>
+		(function (d, a) { var l = a.length; while(l--){ d.createElement(a[l]); } }(document,
+				['HEADER', 'NAV', 'SECTION', 'FOOTER', 'ARTICLE', 'MAIN', 'FIGCAPTION', 'FIGURE', 'ASIDE']));
+	</script>
+	<![endif]-->
+	{#{% include "components/core/favicons/favicons.html" %}#}
+	<style>{% include "demo/viewer/viewer.css" %}</style>
+</head>
+<body class="viewer" data-ng-controller="ViewerController as viewer">
+
+{% raw %}
+<header>
+	<div class="viewer-header" data-viewer-header data-ng-class="{ 'is-small': viewer.isCompact }">
+		<nav class="viewer-module-selector">
+			<div class="viewer-header-select-wrapper">
+			  <span class="viewer-model-type-icon" data-ng-class="{
+					'viewer-icon-component' : viewer.module.type == 'component',
+					'viewer-icon-view' : viewer.module.type == 'view',
+				}"></span>
+				<select id="viewer-module" class="viewer-header-select" data-ng-model="viewer.module"
+						data-ng-options="module.name group by module.type for (id, module) in viewer.modules"></select>
+
+			</div>
+			<button class="viewer-button viewer-icon-label" data-ng-class="{ 'is-active': viewer.showAnnotations }"
+					data-ng-click="viewer.toggleAnnotations()" title="toggle annotations"></button>
+			<button class="viewer-button viewer-icon-info-outline" data-ng-class="{ 'is-active': viewer.info.isOpen }"
+					data-ng-click="viewer.info.isOpen = !viewer.info.isOpen " title="toggle module info"></button>
+			<a data-ng-href="{{ viewer.getModuleDemoPath() }}" target="_blank" title="open module in new window"
+			   class="viewer-link viewer-icon-launch"></a>
+		</nav>
+		<div class="viewer-size-controls">
+			<button class="viewer-button"
+					data-ng-repeat="breakpoint in viewer.breakpoints"
+					data-ng-class="{ 'is-active': (viewer.width == breakpoint.width) }"
+					data-ng-click="viewer.setWidth(breakpoint.width)"
+					>{{ breakpoint.name }}</button>
+			<button class="viewer-button viewer-button-full"
+					data-ng-class="{ 'is-active': viewer.autoWidth }"
+					data-ng-click="viewer.toggleAutoWidth()">FULL</button>
+			<div class="viewer-width-input-wrapper">
+				<input	id="viewer-width" class="viewer-width-input" type="number" min="240" step="10" required="true"
+						  data-ng-model="viewer.width"
+						  data-ng-readonly="viewer.autoWidth">
+			</div>
+		</div>
+
+	</div>
+</header>
+{% endraw %}
+
+{% raw %}
+<main class="viewer-content">
+	<article class="viewer-info"
+			 data-ng-show="viewer.info.isOpen"
+			 data-ng-style="{ 'height': (viewer.height/(viewer.info.isCompact+1) + 4) +'px' }">
+		<header class="viewer-info-header">
+			<nav class="viewer-info-nav">
+				<ul class="viewer-tabs">
+					<li data-ng-repeat="lang in viewer.languages"
+						data-ng-if="viewer.module.info[lang]">
+						<button class="viewer-button"
+								data-ng-class="{ 'is-active': viewer.module.lang == lang }"
+								data-ng-click="viewer.setModuleLang(lang)">
+							{{ lang }}
+						</button>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="viewer-info-control">
+				<button class="viewer-button" data-ng-click="viewer.info.isCompact = !viewer.info.isCompact"
+						data-ng-class="{
+				'viewer-icon-align-top': viewer.info.isCompact,
+				'viewer-icon-align-bottom': !viewer.info.isCompact
+				}">
+				</button>
+				<button class="viewer-button viewer-icon-clear" data-ng-click="viewer.info.isOpen = false"></button>
+			</div>
+		</header>
+
+		<section data-ng-repeat="lang in viewer.languages"
+				 data-ng-if="viewer.module.lang == lang"
+				 class="viewer-info-section" >
+			<h2 class="a11y-sr-only">{{ lang }}</h2>
+			<div data-ng-bind-html="viewer.module.info[lang]"
+				 data-ng-class="{'viewer-info-readme': lang === 'readme'}"
+				 class="viewer-info-language-content"
+					></div>
+		</section>
+
+
+	</article>
+	<iframe class="viewer-frame"
+			frameBorder="0"
+			sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+			data-viewer-frame
+			data-ng-src="{{ viewer.getModuleDemoPath() }}"
+			data-ng-attr-width="{{ viewer.width }}"
+			data-ng-attr-height="{{ viewer.height }}"
+			></iframe>
+</main>
+{% endraw %}
+
+{% raw %}
+<footer role="contentinfo" class="viewer-footer" data-ng-show="viewer.contentInfo.isOpen">
+	<p>The <a href="https://github.com/voorhoede/front-end-guide">Front-end Guide</a> is a project by <a href="http://voorhoede.nl">De Voorhoede</a>.</p>
+	<p>Its code is licensed under <a href="https://github.com/voorhoede/front-end-guide/blob/master/LICENSE">MIT License</a>. So use it however you like.</p>
+</footer>
+{% endraw %}
+<script src="viewer/assets/angular-1.2.29/angular.min.js"></script>
+<script src="viewer/assets/angular-1.2.29/angular-sanitize.min.js"></script>
+<script>
+	angular.module('config',[])
+			.constant('ROOT_PATH', '')
+			.constant('BREAKPOINTS', [
+				{ name: 'XS', width: 320, icon: 'mobile' },
+				{ name: 'S', width: 500, icon: 'tablet' },
+				{ name: 'M', width: 750, icon: 'laptop' },
+				{ name: 'L', width: 1020, icon: 'desktop' },
+				{ name: 'XL', width: 1200, icon: 'xlarge' }
+			])
+			.constant('DEFAULT_MODULE', 'app/style-guide')
+			.constant('MODULES', [
+				{% for component in components %}
+				{
+					"id": "components/{{ component }}",
+					"name": "{{ component }}",
+					"path": "components/{{ component }}",
+					"type": "component"
+				},
+				{% endfor %}
+			]);
+</script>
+<script>{% include "demo/viewer/viewer.js" %}</script>
+</body>
+</html>

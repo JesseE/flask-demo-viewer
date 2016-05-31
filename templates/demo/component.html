@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_title %}Component preview{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>{% include "demo/demo.css" %}</style>
+{% endblock %}
+
+{% block coreHeader %}{# no header #}{% endblock %}
+
+{% block main %}
+    {% block content %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,46 @@
+.demo-example:before {
+    content: "Example: " attr(data-title);
+    display: block;
+    height: 40px; /* Prevent rare render issues with js-calculated positioning */
+    padding: 10px;
+    background: #F3F5F5;
+    clear: both;
+}
+
+.demo-article {
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+    max-width: 1024px;
+}
+
+.demo-article section {
+    margin: 1.25rem 0;
+}
+
+.demo-block {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25%;
+    margin: 0 0 1rem;
+    padding-right: 0.625rem;
+}
+
+.demo-block code {
+    display: inline-block;
+    color: #CC2255;
+    font-size: 0.75rem;
+    padding: 1px 3px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 3px;
+}
+
+.demo-block-info {
+    margin: 0.75rem 0;
+}
+
+.demo-block-info-inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.3125rem 0 0 0.75rem;
+}

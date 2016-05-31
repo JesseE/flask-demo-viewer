@@ -1,0 +1,20 @@
+.demo-annotations-toggler {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 5px;
+	line-height: 1;
+	color: white;
+	background: black;
+	border: none;
+}
+
+[data-demo].is-annotated {
+	outline: 1px solid black;
+}
+[data-demo].is-annotated:before {
+	content: attr(data-demo);
+	position: absolute;
+	background-color: black;
+	color: white;
+}
