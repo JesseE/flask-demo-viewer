@@ -13,6 +13,7 @@
 	<![endif]-->
 	{#{% include "components/core/favicons/favicons.html" %}#}
 	<style>{% include "demo/viewer/viewer.css" %}</style>
+	<link rel="stylesheet" href="{{url_for('static', filename='dist/assets/css/main.css')}}">
 </head>
 <body class="viewer" data-ng-controller="ViewerController as viewer">
 

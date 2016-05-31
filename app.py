@@ -3,8 +3,11 @@ from views.home.views import home_page
 from templates.demo.views import demo_viewer
 from cache import cache
 from configmodule import *
+from flask.ext.compressor import Compressor
 
 app = Flask(__name__)
+
+compressor = Compressor(app)
 
 app.config['CACHE_TYPE'] = 'simple'
 cache.init_app(app)

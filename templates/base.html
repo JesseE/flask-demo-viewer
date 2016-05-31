@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Demo viewer</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='dist/assets/css/main.css')}}">
+    <script scr="{{url_for('static', filename='dist/assets/js/main.js')}}"></script>
 </head>
 <body>
     {% block content %} {% endblock %}
 </body>
+
 </html>
