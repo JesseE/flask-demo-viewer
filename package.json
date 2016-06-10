@@ -1,0 +1,29 @@
+{
+  "name": "flask-scaffold",
+  "version": "0.0.1",
+  "description": "Frontend guide with a python server",
+  "main": "index.js",
+  "scripts": {
+    "watch": "",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesseE/flask-demo-viewer.git"
+  },
+  "keywords": [
+    "frontend",
+    "guide",
+    "python",
+    "server"
+  ],
+  "author": "Jesse Eikema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesseE/flask-demo-viewer/issues"
+  },
+  "homepage": "https://github.com/JesseE/flask-demo-viewer#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0"
+  }
+}
