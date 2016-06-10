@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/footer/footer.less","components/home/home.less"],"names":[],"mappings":"AAAA,QACC,WAAA,QACA,MAAA,MACA,OAAA,MCHD,YACC,MAAA","file":"index.css","sourcesContent":[".footer {\n\tbackground: deepskyblue;\n\twidth: 100px;\n\theight: 100px;\n}",".home-title{\n\tcolor: red;\n}"],"sourceRoot":"/source/"}

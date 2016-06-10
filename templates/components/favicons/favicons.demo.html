@@ -1,0 +1,58 @@
+{% extends "demo/component.html" %}
+
+{%- macro faviconPreview(name) -%}
+    <figure class="demo-block">
+        <div class="demo-block-example">
+            <img src="/static/favicons/{{ name }}.png">
+        </div>
+        <figcaption class="demo-block-info">
+            <code>{{ name }}</code>
+        </figcaption>
+    </figure>
+{%- endmacro -%}
+
+{% block content %}
+<article class="demo-article">
+    <h1>Favicons</h1>
+
+    <h2>Regular</h2>
+    {{- faviconPreview('favicon-16x16') -}}
+    {{- faviconPreview('favicon-32x32') -}}
+    {{- faviconPreview('favicon-96x96') -}}
+    {{- faviconPreview('favicon-230x230') -}}
+
+    <h2>Android Chrome</h2>
+    {{- faviconPreview('android-chrome-36x36') -}}
+    {{- faviconPreview('android-chrome-48x48') -}}
+    {{- faviconPreview('android-chrome-72x72') -}}
+    {{- faviconPreview('android-chrome-96x96') -}}
+    {{- faviconPreview('android-chrome-144x144') -}}
+    {{- faviconPreview('android-chrome-192x192') -}}
+
+    <h2>Apple Touch</h2>
+    {{- faviconPreview('apple-touch-icon-57x57') -}}
+    {{- faviconPreview('apple-touch-icon-60x60') -}}
+    {{- faviconPreview('apple-touch-icon-72x72') -}}
+    {{- faviconPreview('apple-touch-icon-76x76') -}}
+    {{- faviconPreview('apple-touch-icon-114x114') -}}
+    {{- faviconPreview('apple-touch-icon-120x120') -}}
+    {{- faviconPreview('apple-touch-icon-144x144') -}}
+    {{- faviconPreview('apple-touch-icon-152x152') -}}
+    {{- faviconPreview('apple-touch-icon-180x180') -}}
+    {{- faviconPreview('apple-touch-icon-precomposed') -}}
+    {{- faviconPreview('apple-touch-icon') -}}
+
+    <h2>Firefox</h2>
+    {{- faviconPreview('firefox_app_60x60') -}}
+    {{- faviconPreview('firefox_app_128x128') -}}
+    {{- faviconPreview('firefox_app_512x512') -}}
+
+    <h2>MS Tiles</h2>
+    {{- faviconPreview('mstile-70x70') -}}
+    {{- faviconPreview('mstile-144x144') -}}
+    {{- faviconPreview('mstile-150x150') -}}
+    {{- faviconPreview('mstile-310x150') -}}
+    {{- faviconPreview('mstile-310x310') -}}
+
+</article>
+{% endblock %}
