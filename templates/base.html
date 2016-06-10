@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Demo viewer</title>
+    {% assets "js_bundle" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    {% assets "css_bundle"%}
+        <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+    {% block styles %}{% endblock %}
 </head>
 <body>
     {% block content %} {% endblock %}
