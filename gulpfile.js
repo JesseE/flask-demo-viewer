@@ -25,7 +25,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const svgmin = require('gulp-svgmin');
 const taskListing = require('gulp-task-listing');
 const uglify = require('gulp-uglify');
-const tsify = require('tsify');
 const watchify = require('watchify');
 const yargs = require('yargs');
 
@@ -140,7 +139,6 @@ function createBundler() {
  */
 function writeBundle(bundler) {
     return bundler
-        .plugin(tsify)
         .bundle()
         .pipe(source('index.js')) // name of output file
         .pipe(buffer()) // convert to buffer to enable source
