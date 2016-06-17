@@ -7,7 +7,6 @@ const paths = {
 let handlers = {};
 
 // PLUGINS
-
 const autoprefixer = require('gulp-autoprefixer');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
@@ -26,6 +25,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const svgmin = require('gulp-svgmin');
 const taskListing = require('gulp-task-listing');
 const uglify = require('gulp-uglify');
+const tsify = require('tsify');
 const watchify = require('watchify');
 const yargs = require('yargs');
 
@@ -47,7 +47,9 @@ gulp.task('fonts:copy', copyFonts);
 gulp.task('icons:optimize', optimizeIcons);
 
 // HANDLER FUNCTIONS
-
+// not sure if this fixes the memomryleak problem but it was suggested here:
+// http://stackoverflow.com/questions/9768444/possible-eventemitter-memory-leak-detected
+require('events').EventEmitter.prototype._maxListeners = 100;
 /**
  * Basic error handler; puts message to the screen, stops the stream
  * @param {Object} error - Error event
@@ -126,9 +128,9 @@ function watchJs() {
  */
 function createBundler() {
     return browserify({
-            entries: paths.src + 'index.js', // main file
+            entries: paths.src + 'index.ts', // main file
             debug: true // sourcemaps
-        });
+        })
 }
 
 /**
@@ -138,6 +140,7 @@ function createBundler() {
  */
 function writeBundle(bundler) {
     return bundler
+        .plugin(tsify)
         .bundle()
         .pipe(source('index.js')) // name of output file
         .pipe(buffer()) // convert to buffer to enable source
