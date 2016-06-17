@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Demo viewer</title>
     {% assets "js_bundle" %}
-        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        <script type="text/javascript" src="{{ ASSET_URL }}" defer></script>
     {% endassets %}
     {% assets "css_bundle"%}
         <link rel="stylesheet" href="{{ ASSET_URL }}">
