@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec7f5120-44d6-4b95-a39f-9465ede9643d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/views/demoviewerpage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/index.css" afterPath="$PROJECT_DIR$/static/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/index.css.map" afterPath="$PROJECT_DIR$/static/css/index.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="$PROJECT_DIR$/static/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/index.js.map" afterPath="$PROJECT_DIR$/static/js/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/components.less" afterPath="$PROJECT_DIR$/templates/components/components.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/favicons/favicons.html" afterPath="$PROJECT_DIR$/templates/components/favicons/favicons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/footer/footer.demo.html" afterPath="$PROJECT_DIR$/templates/components/footer/footer.demo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/header/header.demo.html" afterPath="$PROJECT_DIR$/templates/components/header/header.demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/header/header.html" afterPath="$PROJECT_DIR$/templates/components/header/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/home/home.js" afterPath="$PROJECT_DIR$/templates/components/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/menu/menu.html" afterPath="$PROJECT_DIR$/templates/components/menu/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.less" afterPath="$PROJECT_DIR$/templates/index.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/views/demopage.html" afterPath="$PROJECT_DIR$/templates/views/demopage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/views/homepage.html" afterPath="$PROJECT_DIR$/templates/views/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/home/home.demo.html" afterPath="$PROJECT_DIR$/templates/components/home/home.demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/components/menu/menu.demo.html" afterPath="$PROJECT_DIR$/templates/components/menu/menu.demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/views/demoviewerpage.html" afterPath="$PROJECT_DIR$/templates/views/demoviewerpage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/demo/views.py" afterPath="$PROJECT_DIR$/views/demo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/views.py" afterPath="$PROJECT_DIR$/views/home/views.py" />
     </list>
     <ignored path="flask-scaffold.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,9 +46,9 @@
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
               <folding>
-                <marker date="1466686131000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
+                <marker date="1466692229000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
               </folding>
             </state>
           </provider>
@@ -96,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/templates/views/demoviewerpage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -175,9 +167,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -358,6 +350,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="favicons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-scaffold" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-scaffold" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="favicons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-scaffold" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-scaffold" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -396,11 +436,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/components" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/templates/viewer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/components" />
@@ -486,10 +526,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1200" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18124342" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24259521" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9215509" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -545,7 +585,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
           <folding>
-            <marker date="1466686131000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
+            <marker date="1466692229000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
           </folding>
         </state>
       </provider>
@@ -609,7 +649,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
           <folding>
-            <marker date="1466686131000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
+            <marker date="1466692229000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
           </folding>
         </state>
       </provider>
@@ -832,9 +872,9 @@
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
           <folding>
-            <marker date="1466686131000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
+            <marker date="1466692229000" expanded="true" signature="29:79" placeholder="{&quot;src&quot;: './templates/'...}" />
           </folding>
         </state>
       </provider>
@@ -858,7 +898,7 @@
     <entry file="file://$PROJECT_DIR$/templates/views/demoviewerpage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
           <folding />
         </state>
       </provider>

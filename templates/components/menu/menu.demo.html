@@ -1,12 +1,9 @@
 {% extends "base.html" %}
-
+{% from "components/header/header.html" import header %}
 {% from "components/menu/menu.html" import list %}
 
 {% block content %}
-<h1>
-    user: {{ user }}
-</h1>
-<h2>This is the home page</h2>
+{{header(title='menu component')}}
 
 {{ list(module_list, demo=True) }}
 

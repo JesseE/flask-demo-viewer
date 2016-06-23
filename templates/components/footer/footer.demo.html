@@ -1,9 +1,5 @@
 {% extends "base.html" %}
-
+{% from "components/header/header.html" import header %}
 {% block content %}
-<nav>
-    <ul>
-        <li>Footer</li>
-    </ul>
-</nav>
+    {{header(title='footer component')}}
 {% endblock %}

@@ -10,7 +10,7 @@
     <title>Demo viewer</title>
 </head>
 <body>
-    
+
 <demo-viewer></demo-viewer>
 
 <link rel="stylesheet" href="static/css/viewer.css">
@@ -19,10 +19,9 @@
     window.demoViewer({
         modules: [{% for component in module_list %}
 				{
-					"id": "components/{{ component }}",
-					"name": "{{ component }}",
-					"path": "components/{{ component }}",
-					"type": "component"
+					"name": "demo/{{ component }}",
+					"url": "/demo/{{ component }}",
+                    "info": { readme: "demo/{{ component }}/readme" }
 				},
 				{% endfor %}],
         sizes: [
@@ -34,8 +33,6 @@
         ]
     });
 </script>
-
-
 </body>
 </html>
 {% endblock %}

@@ -211,6 +211,7 @@ function listening () {
     browserSync({
         files: [
             'templates/**/*.{html}',
+            'templates/**/*/*.{md}',
             'templates/**/*/*.{html}',
             'templates/base.html',
             'static/**/*.{js,css}'
