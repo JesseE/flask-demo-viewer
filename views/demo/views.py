@@ -10,6 +10,7 @@ exceptionsList = '.less'
 demoHtml = '.demo.html'
 demoList = []
 moduleList = []
+demoviewerList = []
 demo = []
 
 def get_demo_directory():
@@ -42,3 +43,17 @@ def demo_component_page(page, **kwargs):
         'module_list': moduleList
     }) 
     return render_template('components' + '/{0}/{0}.demo.html'.format(page), **kwargs)
+
+
+@demo_viewer.route('/demoviewer')
+def demoviewer_home(**kwargs):
+    get_demo_component()
+    
+    # for item in moduleList:
+    #     demoviewerList.append({name: item})
+    
+    kwargs.update({
+        'module_list': moduleList
+    }) 
+    
+    return render_template('views/demoviewerpage.html', **kwargs)

@@ -1,10 +1,6 @@
 {% extends "base.html" %}
+{% from "components/header/header.html" import header %}
 
 {% block content %}
-<nav>
-    <ul>
-        <li>Header</li>
-    </ul>
-</nav>
-{{moduleList}}
+    {{header(title='Header')}}
 {% endblock %}

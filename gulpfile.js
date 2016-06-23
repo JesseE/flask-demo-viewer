@@ -35,6 +35,7 @@ gulp.task('default', ['help']);
 gulp.task('help', help);
 gulp.task('watch', watch);
 
+
 // SUB TASKS
 
 gulp.task('build:all', ['build:clean', 'build:css', 'build:js', 'favicons:generate', 'fonts:copy']);
@@ -202,5 +203,24 @@ function optimizeIcons() {
 function watch() {
     gulp.watch(paths.src + '**/*.less', ['build:css']);
     watchJs(); // use watchify instead of gulp.watch for faster rebundling
+    listening();
 }
 
+
+function listening () {    
+    browserSync({
+        files: [
+            'templates/**/*.{html}',
+            'templates/**/*/*.{html}',
+            'templates/base.html',
+            'static/**/*.{js,css}'
+        ],
+        online: false,
+        port: 5000,
+        proxy: 'localhost:' + 5000,
+        ui: false,
+        codeSync: true,
+        browser: "google chrome",
+        open: "local"
+    });
+}

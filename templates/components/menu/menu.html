@@ -1,10 +1,10 @@
 {% macro list(moduleList, demo) %}
-<ul>
+<ul class='unorderd-list'>
     {% for link in moduleList %}
-    <li>
+    <li class="unorderd-list__item">
         {% if demo %}
-        <a href="demo/{{link}}">
-            <span>{{link}}</span>
+        <a href="demo/{{link}}" class="unorderd-list__item-link">
+            <span class="unorderd-list__item-text" >{{link}}</span>
         </a>
         {% else %}
         <a href="{{link}}">

@@ -7,7 +7,7 @@ mypath = 'templates/'
 
 @home_page.route('/')
 def home(**kwargs):
-    pageList = ['demo']                
+    pageList = ['demo', 'demoviewer']                
     kwargs.update({
         'pageList': pageList
     })
