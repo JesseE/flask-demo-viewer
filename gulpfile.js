@@ -27,7 +27,7 @@ const taskListing = require('gulp-task-listing');
 const uglify = require('gulp-uglify');
 const watchify = require('watchify');
 const yargs = require('yargs');
-
+const browserSync = require('browser-sync');
 // MAIN TASKS
 
 gulp.task('build', ['build:css', 'build:js']);
@@ -127,7 +127,7 @@ function watchJs() {
  */
 function createBundler() {
     return browserify({
-            entries: paths.src + 'index.ts', // main file
+            entries: paths.src + 'index.js', // main file
             debug: true // sourcemaps
         })
 }
@@ -203,3 +203,4 @@ function watch() {
     gulp.watch(paths.src + '**/*.less', ['build:css']);
     watchJs(); // use watchify instead of gulp.watch for faster rebundling
 }
+

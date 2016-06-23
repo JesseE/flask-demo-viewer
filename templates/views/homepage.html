@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "components/menu/menu.html" import list %}
+
+{% block content %}
+<div>
+    <h1>
+        user: {{ user }}
+    </h1>
+    <h2>This is the home page</h2>
+</div>
+<div>
+    {{ list(pageList, demo=False) }}
+</div>
+{% endblock %}

@@ -6,8 +6,8 @@ mypath = 'templates/components/'
 
 demo_viewer = Blueprint('demo_viewer', __name__, template_folder=mypath)
 
-exceptions = 'base.html'
-demoHtml = '.demo'
+exceptionsList = '.less'
+demoHtml = '.demo.html'
 demoList = []
 moduleList = []
 demo = []
@@ -18,21 +18,27 @@ def get_demo_directory():
     
 def get_demo_component():
     demo = get_demo_directory()
-    for directory in tuple(demo):
-        for directory in listdir(mypath+directory): 
-            directory = directory.replace('.html', '')
-            if directory.endswith(demoHtml) and directory not in demoList:
-                demoList.append(directory)
-            elif directory not in moduleList and not directory.endswith(demoHtml):
-                moduleList.append(directory)
-    
+    for directory in demo:
+        if not directory.endswith(exceptionsList): 
+            for moduleFile in listdir(mypath +directory):
+                if moduleFile.endswith('.html') and not moduleFile.endswith(demoHtml):
+                    moduleFile = moduleFile.replace('.html', '')
+                    if moduleFile not in moduleList:
+                        moduleList.append(moduleFile)
+                
 @demo_viewer.route('/demo')
-def demo_overview_page():
+def demo_overview_page(**kwargs):
     get_demo_component()
-    page = 'demo'    
-    return render_template('components' + '/{0}/{0}.{0}.html'.format(page), moduleList=moduleList)
+    page = 'home'   
+    kwargs.update({
+        'module_list': moduleList
+    }) 
+    return render_template('views/demopage.html', **kwargs)
 
 @demo_viewer.route('/demo/<page>')
-def demo_component_page(page):
+def demo_component_page(page, **kwargs):
     get_demo_component()
-    return render_template('components' + '/{0}/{0}.demo.html'.format(page), demoList=demoList)
+    kwargs.update({
+        'module_list': moduleList
+    }) 
+    return render_template('components' + '/{0}/{0}.demo.html'.format(page), **kwargs)

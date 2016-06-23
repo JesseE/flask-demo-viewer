@@ -1,19 +1,17 @@
-{% macro demoListing(moduleList) %}
+{% macro list(moduleList, demo) %}
 <ul>
     {% for link in moduleList %}
-    <a href="demo/{{link}}">
-        <li>{{link}}</li>
-    </a>
-    {% endfor %}
-</ul>
-{% endmacro %}
-
-{% macro mainMenu(pageList) %}
-<ul>
-    {% for link in pageList %}
-    <a href="{{link}}">
-        <li>{{link}}</li>
-    </a>
+    <li>
+        {% if demo %}
+        <a href="demo/{{link}}">
+            <span>{{link}}</span>
+        </a>
+        {% else %}
+        <a href="{{link}}">
+            <span>{{link}}</span>
+        </a>
+        {% endif %}
+    </li>
     {% endfor %}
 </ul>
 {% endmacro %}

@@ -32,6 +32,7 @@ app.register_blueprint(demo_viewer)
 
 run_simple(hostname, port, app,
     use_reloader=True, 
+    use_debugger=True,
     threaded=True, 
     reloader_type='watchdog',
     extra_files=files_to_watch

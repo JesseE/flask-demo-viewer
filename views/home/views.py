@@ -6,6 +6,9 @@ home_page = Blueprint('home_page', __name__, template_folder='templates')
 mypath = 'templates/'
 
 @home_page.route('/')
-def home():
+def home(**kwargs):
     pageList = ['demo']                
-    return render_template('components/home/home.demo.html', pageList=pageList)
+    kwargs.update({
+        'pageList': pageList
+    })
+    return render_template('views/homepage.html', **kwargs)
